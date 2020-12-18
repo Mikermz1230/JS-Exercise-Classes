@@ -42,9 +42,12 @@ class Airplane {
   */
   
  class Person {
-    
+   constructor(info){
+     this.name = info.firstname;
+     this.age = info.age
+   }
   }
-  
+  let Mike = new person ({firstname:"Mike",Age:24})
   /*
     TASK 2
       - Write a Car class whose constructor initializes `model` and `milesPerGallon` from arguments.
