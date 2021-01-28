@@ -42,7 +42,12 @@ class Airplane {
   */
   
  class Person {
-    
+   constructor(thing){
+     this.name = thing.name;
+     this.age = thing.age;
+     this.eat = thing.eat;
+     this.poop = thing.poop;
+   }  
   }
   
   /*
