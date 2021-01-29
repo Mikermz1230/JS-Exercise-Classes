@@ -42,12 +42,22 @@ class Airplane {
   */
   
  class Person {
-   constructor(thing){
-     this.name = thing.name;
-     this.age = thing.age;
-     this.eat = thing.eat;
-     this.poop = thing.poop;
+   constructor(name,age){
+     this.name = name;
+     this.age = age;
+     this.stomach = [];
+   }
+   eat(food) {
+    if (this.stomach.length < 10) {
+      this.stomach.push(food);
+    }
    }  
+   poop(){
+     this.stomach = [];
+   }
+   tostring(){
+     return `${this.name}, ${this.age}`;
+   }
   }
   
   /*
@@ -87,7 +97,7 @@ class Airplane {
   }
 }
  1
-  
+
   /*
     TASK 3
       - Write a Lambdasian class.
