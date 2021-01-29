@@ -86,6 +86,7 @@ class Airplane {
     return this.odometer, this.tank;
   }
 }
+ 1
   
   /*
     TASK 3
