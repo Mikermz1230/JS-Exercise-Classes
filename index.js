@@ -111,9 +111,15 @@ class Airplane {
           + {name} and {location} of course come from the instance's own properties.
   */
  class Lambdasian {
-    
+    constructor(singleArguement){
+    this.name = singleArguement.name;
+    this.age = singleArguement.age;
+    this.location = singleArguement.location;
   }
-  
+  speak(){
+    return `Hello my name is ${this.name} and I am from ${this.location}`;
+  }
+}
   /*
     TASK 4
       - Write an Instructor class extending Lambdasian.
@@ -128,8 +134,19 @@ class Airplane {
           + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
           + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
   */
- class Instructor {
-
+ class Instructor extends Lambdasian {
+ constructor(attributes){
+  super(attributes);
+  this.specialty = attributes.specialty;
+  this.favLanguage = attributes.favLanguage;
+  this.catchphrase = attributes.catchPhrase;
+ }
+ demo(subject){
+   return `Today we learning about ${subject}`;
+ }
+ grade(student,subject){
+   return `${student.name} receives a perfect score on ${subject}`;
+ }
  }
   /*
     TASK 5
@@ -146,10 +163,12 @@ class Airplane {
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
- class Student {
-     
+ class Student extends Instructor {
+     constructor(attributes){
+     super(attributes);
+     this.className = attributes.className;
  }
-  
+}
   /*
     TASK 6
       - Write a ProjectManager class extending Instructor.
